@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-Module for the User class.
+This is User class to represent new users
 """
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """
-    class User that handles users' information
-    """
+    """ User subclass that inherits from BaseModel """
     email = ""
     password = ""
     first_name = ""
