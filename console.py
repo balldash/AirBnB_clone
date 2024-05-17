@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the console base for the unit - Written by Bislon Zulu
+This is the console base for the unit
 """
 import cmd
 from models.base_model import BaseModel
