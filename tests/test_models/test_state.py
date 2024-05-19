@@ -52,7 +52,7 @@ class TestStateClass(unittest.TestCase):
     def test_field_types(self):
         """ Test field attributes of user """
         my_state = State()
-        self.assertTrue(type(my_state.name) == str)
+        self.assertTrue(type(my_state.name) is str)
 
 
 if __name__ == '__main__':

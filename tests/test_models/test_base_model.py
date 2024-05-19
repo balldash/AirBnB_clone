@@ -60,12 +60,12 @@ class TestBaseClass(unittest.TestCase):
     def test_id_type(self):
         """ Test id type"""
         my_third = BaseModel()
-        self.assertTrue(type(my_third.id) == str)
+        self.assertTrue(type(my_third.id) is str)
 
     def test_datetime_type(self):
         """ Test datetime type """
         my_third = BaseModel()
-        self.assertTrue(type(my_third.created_at) == datetime)
+        self.assertTrue(type(my_third.created_at) is datetime)
 
     def test_str(self):
         """ Test str output """
@@ -86,10 +86,10 @@ class TestBaseClass(unittest.TestCase):
         """testing to dict function"""
         test = BaseModel()
         my_model = test.to_dict()
-        self.assertTrue(type(my_model["created_at"] == str))
-        self.assertTrue(type(my_model["updated_at"] == str))
-        self.assertTrue(type(test.created_at) == datetime)
-        self.assertTrue(type(test.updated_at) == datetime)
+        self.assertTrue(type(my_model["created_at"] is str))
+        self.assertTrue(type(my_model["updated_at"] is str))
+        self.assertTrue(type(test.created_at) is datetime)
+        self.assertTrue(type(test.updated_at) is datetime)
         self.assertEqual(my_model["created_at"], test.created_at.isoformat())
         self.assertEqual(my_model["updated_at"], test.updated_at.isoformat())
 
@@ -99,24 +99,24 @@ class TestBaseClass(unittest.TestCase):
         my_model_json = my_model.to_dict()
         my_new_model = BaseModel(**my_model_json)
         self.assertEqual(my_model_json, my_new_model.to_dict())
-        self.assertTrue(type(my_new_model.id) == str)
-        self.assertTrue(type(my_new_model.created_at) == datetime)
-        self.assertTrue(type(my_new_model.updated_at) == datetime)
+        self.assertTrue(type(my_new_model.id) is str)
+        self.assertTrue(type(my_new_model.created_at) is datetime)
+        self.assertTrue(type(my_new_model.updated_at) is datetime)
 
     def test_base_from_emp_dict(self):
         """test with an empty dictionary"""
         my_dict = {}
         my_new_model = BaseModel(**my_dict)
-        self.assertTrue(type(my_new_model.id) == str)
-        self.assertTrue(type(my_new_model.created_at) == datetime)
-        self.assertTrue(type(my_new_model.updated_at) == datetime)
+        self.assertTrue(type(my_new_model.id) is str)
+        self.assertTrue(type(my_new_model.created_at) is datetime)
+        self.assertTrue(type(my_new_model.updated_at) is datetime)
 
     def test_base_from_non_dict(self):
         """test with a None dictionary"""
         my_new_model = BaseModel(None)
-        self.assertTrue(type(my_new_model.id) == str)
-        self.assertTrue(type(my_new_model.created_at) == datetime)
-        self.assertTrue(type(my_new_model.updated_at) == datetime)
+        self.assertTrue(type(my_new_model.id) is str)
+        self.assertTrue(type(my_new_model.created_at) is datetime)
+        self.assertTrue(type(my_new_model.updated_at) is datetime)
 
     def test_save(self):
         """ test save method of basemodel """
@@ -142,6 +142,7 @@ class TestBaseClass(unittest.TestCase):
         # Check for execution access
         is_exec_true = os.access('models/base_model.py', os.X_OK)
         self.assertTrue(is_exec_true)
+
 
 if __name__ == '__main__':
     unittest.main()
