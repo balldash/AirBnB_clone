@@ -63,7 +63,7 @@ class TestAmenityClass(unittest.TestCase):
     def test_field_types(self):
         """ Test field attributes of user """
         my_Amenity = Amenity()
-        self.assertTrue(type(my_Amenity.name) == str)
+        self.assertTrue(type(my_Amenity.name) is str)
 
 
 if __name__ == '__main__':

@@ -52,8 +52,8 @@ class TestCityClass(unittest.TestCase):
     def test_field_types(self):
         """ Test field attributes of user """
         my_city = City()
-        self.assertTrue(type(my_city.name) == str)
-        self.assertTrue(type(my_city.state_id) == str)
+        self.assertTrue(type(my_city.name) is str)
+        self.assertTrue(type(my_city.state_id) is str)
 
 
 if __name__ == '__main__':

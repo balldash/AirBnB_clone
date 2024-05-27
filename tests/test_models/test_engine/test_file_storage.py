@@ -59,7 +59,7 @@ class TestFileStorageClass(unittest.TestCase):
         """ Test method all from filestorage """
         my_obj = FileStorage()
         my_dict = my_obj.all()
-        self.assertTrue(type(my_dict) == dict)
+        self.assertTrue(type(my_dict) is dict)
 
     def test_new(self):
         """ Tests method new for filestorage """
